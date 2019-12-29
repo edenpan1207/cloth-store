@@ -11,6 +11,7 @@ class Directory extends Component {
         {
           title: 'hats',
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+          linkUrl: 'header',
           id: 1
         },
         {
@@ -43,8 +44,8 @@ class Directory extends Component {
     const {sections} = this.state;
     return (
       <div className='directory-menu'>
-        {sections.map(({ id, title, imageUrl, size = '' }) => (
-          <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        {sections.map(({ id, ...others}) => (
+          <MenuItem key={id} {...others} />
         ))}
       </div>
     )
